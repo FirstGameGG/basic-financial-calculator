@@ -6,10 +6,84 @@
     <link rel="apple-touch-icon" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#1976d2" />
+    <meta
+      name="description"
+      content="Free financial calculators for Thai users covering loans, savings, fixed deposits, tiered deposits, and time-value of money scenarios."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="th,en" />
+    <link rel="canonical" href="https://firstgamegg.github.io/basic-financial-calculator/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Basic Financial Calculator" />
+    <meta
+      property="og:description"
+      content="Explore loan, savings, and time-value calculators tailored for everyday financial decisions in Thailand."
+    />
+    <meta property="og:url" content="https://firstgamegg.github.io/basic-financial-calculator/" />
+    <meta property="og:image" content="https://firstgamegg.github.io/basic-financial-calculator/favicon.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Basic Financial Calculator" />
+    <meta
+      name="twitter:description"
+      content="Loan, savings, and investment calculators designed for Thai households."
+    />
+    <meta name="twitter:image" content="https://firstgamegg.github.io/basic-financial-calculator/favicon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Basic Financial Calculator",
+        "url": "https://firstgamegg.github.io/basic-financial-calculator/",
+        "description": "Free calculators for loans, savings, fixed deposits, tiered deposits, and time-value scenarios tailored to Thai regulations.",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "THB"
+        },
+        "featureList": [
+          "Loan amortization schedules",
+          "Savings Actual/365 calculator",
+          "Fixed and tiered deposit interest projections",
+          "Future value and net present value tools"
+        ],
+        "inLanguage": ["th", "en"]
+      }
+    </script>
     <title>Basic Financial Calculator</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <noscript>
+        <p>Please enable JavaScript to use the interactive financial calculators.</p>
+      </noscript>
+      <main aria-label="Basic Financial Calculator">
+        <h1>Basic Financial Calculator</h1>
+        <p>
+          A collection of free tools for Thai households and professionals to assess loans, deposits, and time value
+          scenarios with localized assumptions.
+        </p>
+        <section aria-labelledby="calculator-directory">
+          <h2 id="calculator-directory">Available Calculators</h2>
+          <ul>
+            <li><a href="calculators/loan">Loan repayment schedule calculator</a></li>
+            <li><a href="calculators/time-value/future-value">Future value projection</a></li>
+            <li><a href="calculators/time-value/net-present-value">Net present value evaluator</a></li>
+            <li><a href="calculators/deposits/savings">Savings Actual/365 interest calculator</a></li>
+            <li><a href="calculators/deposits/fixed">Fixed deposit comparison</a></li>
+            <li><a href="calculators/deposits/tiered">Tiered deposit ladder</a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="about-platform">
+          <h2 id="about-platform">Why this platform</h2>
+          <p>
+            The calculators follow Bank of Thailand conventions, support Thai and English interfaces, and export
+            schedules in CSV or Excel formats for reporting.
+          </p>
+        </section>
+      </main>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
