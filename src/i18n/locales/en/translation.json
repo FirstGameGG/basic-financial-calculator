@@ -1,0 +1,609 @@
+{
+  "app": {
+    "title": "Basic Financial Calculator"
+  },
+  "nav": {
+    "home": "Home",
+    "loanCalculator": "Loan Calculator",
+    "timeValue": "Time Value of Money",
+    "deposits": "Deposits Calculator",
+    "about": "About"
+  },
+  "footer": {
+    "tagline": "Financial tools for everyday decisions, designed for Thai people",
+    "groupQuickLinks": "Quick links",
+    "groupCalculators": "Calculators",
+    "groupContact": "Get in touch",
+    "contactDescription": "Have questions or ideas for the calculators? Send a note and we'll get back soon.",
+    "license": "Project repository on GitHub",
+    "copyright": "\u00a9 {{year}} Basic Financial Calculator"
+  },
+  "theme": {
+    "light": "Light mode",
+    "dark": "Dark mode"
+  },
+  "fontSize": {
+    "label": "Text size",
+    "ariaLabel": "Adjust text size",
+    "small": "Smaller text",
+    "medium": "Default text",
+    "large": "Larger text"
+  },
+  "home": {
+    "hero": {
+      "kicker": "Financial planning made friendly",
+      "title": "Understand every baht before you commit",
+      "subtitle": "Model loans, deposits, and time value scenarios with precise decimal math and Thai-specific guidance—no sign-up required.",
+      "primaryCta": "Explore our calculators",
+      "secondaryCta": "Read about the project",
+      "highlights": {
+        "privacy": {
+          "title": "Private by design",
+          "description": "Run calculations locally. We don't store inputs or share your data."
+        },
+        "localization": {
+          "title": "Local banking context",
+          "description": "Bank of Thailand interest rate sources and Thai withholding tax handling."
+        }
+      },
+      "logoAlt": "Basic Financial Calculator logo mark"
+    },
+    "calculatorNav": {
+      "title": "Explore our calculators",
+      "subtitle": "Pick a calculation to jump in with guided inputs and localized tips.",
+      "items": {
+        "loan": {
+          "title": "Loan repayment planner",
+          "description": "Enter the loan details to estimate monthly payments and interest costs.",
+          "action": "Open loan calculator"
+        },
+        "futureValue": {
+          "title": "Future value calculator",
+          "description": "Model compound growth with optional recurring contributions.",
+          "action": "Open future value"
+        },
+        "netPresentValue": {
+          "title": "Net present value calculator",
+          "description": "Discount a series of cash flows to today's dollars.",
+          "action": "Open NPV calculator"
+        },
+        "savings": {
+          "title": "Savings deposit calculator",
+          "description": "Calculate Actual/365 accrual with biannual payouts and latest BOT reference rates.",
+          "action": "Open savings calculator"
+        },
+        "fixed": {
+          "title": "Fixed deposit calculator",
+          "description": "Calculate fixed-term simple-interest deposits with optional rollovers and tax summaries.",
+          "action": "Open fixed deposit"
+        },
+        "tiered": {
+          "title": "Tiered deposit calculator",
+          "description": "Calculate tiered balances with multiple rate steps and detailed breakdowns.",
+          "action": "Open tiered deposit"
+        }
+      }
+    }
+  },
+  "validation": {
+    "required": "This field is required.",
+    "nonNegative": "Enter a value greater than or equal to zero.",
+    "dateFormat": "Use the YYYY-MM-DD format.",
+    "endDateAfterStart": "End date must be after the start date.",
+    "integer": "Enter a whole number.",
+    "positive": "Enter a value greater than zero."
+  },
+  "loan": {
+    "pageTitle": "Loan repayment planner",
+    "pageSubtitle": "Enter the loan details to estimate monthly payments and interest costs.",
+    "inputs": {
+      "principal": "Loan amount",
+      "interestRate": "Interest rate (% per year)",
+      "term": "Term (years)",
+      "schedule": "Payments per year"
+    },
+    "helper": {
+      "term": "Use your planned repayment period in years.",
+      "schedule": "For monthly payments use 12, quarterly use 4."
+    },
+    "submit": "Calculate repayment",
+    "reset": "Clear form",
+    "resetConfirm": "This will clear the form and delete saved values. Continue?",
+    "resetConfirmAction": "Yes, reset",
+    "results": {
+      "title": "Results",
+      "empty": "Enter loan details to view projections.",
+      "monthlyPayment": "Payment per period",
+      "totalInterest": "Total interest",
+      "totalCost": "Total cost",
+      "amortization": "Amortization"
+  },
+    "chart": {
+      "title": "Amortization chart",
+      "interest": "Interest paid",
+      "principal": "Principal balance",
+      "period": "Period"
+    },
+    "table": {
+      "balance": "Remaining balance",
+      "showAll": "Show full schedule (+{{count}} more)",
+      "showLess": "Show less"
+    },
+    "info": {
+      "title": "How we calculate loan repayment",
+      "subtitle": "We use the standard amortization formula to calculate fixed monthly payments.",
+      "formula": "PMT = \\frac{P \\times r \\times (1 + r)^n}{(1 + r)^n - 1}",
+      "items": {
+        "principal": {
+          "title": "P — Principal",
+          "description": "The total loan amount borrowed."
+        },
+        "rate": {
+          "title": "r — Rate per period",
+          "description": "Annual interest rate divided by the number of payment periods per year."
+        },
+        "periods": {
+          "title": "n — Total periods",
+          "description": "Total number of payment periods (years × payments per year)."
+        },
+        "payment": {
+          "title": "PMT — Payment",
+          "description": "Fixed payment amount per period that covers both interest and principal."
+        }
+      }
+    }
+  },
+  "about": {
+    "title": "About Basic Financial Calculator",
+    "hero": {
+      "kicker": "Financial tools for Thai people.",
+      "title": "Built to demystify everyday Thai banking decisions",
+      "description": "Basic Financial Calculator started as a learning project to help friends compare interest, value, and loans. This new version continues that mission: make calculations accessible, safe, and non-commercial."
+    },
+    "mission": {
+      "title": "Why this project exists",
+      "paragraphs": [
+        "The legacy site made it simple to calculate simple interest, compound growth, present and future value, and loan payments without spreadsheets or sign-ups.",
+        "This version retains that simplicity, adding decimal precision and best practices aligned with Thailand's financial system."
+      ]
+    },
+    "highlights": {
+      "privacy": {
+        "title": "No tracking or data collection",
+        "description": "Calculations run entirely in your browser. We don't store inputs, require accounts, or monetize your data."
+      },
+      "coverage": {
+        "title": "Core calculators in one place",
+        "description": "Work through deposit interest, future value, present value, and loan repayment scenarios with consistent inputs and outputs."
+      },
+      "support": {
+        "title": "Localized for Thai people",
+        "description": "Calculations adapted to Thailand's context, referencing Bank of Thailand interest rates."
+      }
+    },
+    "contact": {
+      "title": "Stay in touch",
+      "description": "Found an issue or want to suggest a scenario? Reach out directly.",
+      "emailLabel": "Email",
+      "emailValue": "thitichot.k@ku.th"
+    },
+    "team": {
+      "title": "Who is behind the project",
+      "members": [
+        {
+          "name": "Thitichot Kingphaibun",
+          "role": "Full-stack web developer",
+          "bio": "Designs the calculators, builds the user experience, and maintains the codebase.",
+          "email": "thitichot.k@ku.th"
+        }
+      ]
+    },
+    "license": {
+      "title": "Project repository",
+      "description": "Explore the source code, issues, and updates for Basic Financial Calculator.",
+      "linkLabel": "Open the GitHub repository"
+    }
+  },
+  "timeValue": {
+    "pageTitle": "Time Value of Money",
+    "pageSubtitle": "Explore future value and net present value.",
+    "tabs": {
+      "futureValue": "Future Value",
+      "netPresentValue": "Net Present Value"
+    },
+    "futureValue": {
+      "title": "Future value",
+      "description": "Model compound growth with optional recurring contributions.",
+      "inputs": {
+        "startingPrincipal": "Present value",
+        "annualRate": "Annual interest rate",
+        "totalPeriods": "Total periods",
+        "compoundingFrequency": "Compounding frequency",
+        "recurringContribution": "Recurring contribution per period",
+        "contributionTiming": "Contribution timing"
+      },
+      "frequency": {
+        "monthly": "Monthly",
+        "quarterly": "Quarterly",
+        "annually": "Annually"
+      },
+      "timing": {
+        "end": "End of period",
+        "begin": "Beginning of period"
+      },
+      "submit": "Calculate future value",
+      "reset": "Reset form",
+      "results": {
+        "title": "Future value summary",
+    "empty": "Enter investment details to view projections.",
+        "futureValue": "Future value",
+        "totalInvested": "Total invested",
+        "totalGrowth": "Total growth",
+        "periods": "Total periods",
+        "periodicContribution": "Contribution per period",
+        "ratePerPeriod": "Rate per period"
+      },
+      "chart": {
+        "title": "Growth over time",
+        "periodLabel": "Period",
+        "totalValue": "Future value",
+        "totalContributions": "Total invested"
+      },
+      "schedule": {
+        "title": "Schedule Breakdown"
+      },
+      "info": {
+        "title": "How we calculate future value",
+        "subtitle": "We apply standard future value of an annuity formulas with decimal precision.",
+        "formula": "FV = PV \u00d7 (1 + r)^n + PMT \u00d7 ((1 + r)^n \u2212 1) / r \u00d7 (1 + r)^\u03b4",
+        "items": {
+          "pv": {
+            "title": "PV \u2014 Present value",
+            "description": "Your initial starting balance that compounds each period."
+          },
+          "rate": {
+            "title": "r \u2014 Rate per period",
+            "description": "Annual percentage rate divided by the selected compounding frequency."
+          },
+          "periods": {
+            "title": "n \u2014 Total periods",
+            "description": "Number of compounding periods the investment accrues for."
+          },
+          "contribution": {
+            "title": "PMT \u2014 Contribution",
+            "description": "Recurring deposit added at the end or beginning of each period."
+          },
+          "frequency": {
+            "title": "\u03b4 \u2014 Timing factor",
+            "description": "\u03b4 = 1 when contributions are made at the period start, otherwise 0."
+          }
+        }
+      }
+    },
+    "npv": {
+      "title": "Net present value",
+      "description": "Discount a series of cash flows to today\u2019s dollars.",
+      "inputs": {
+        "initialInvestment": "Initial investment",
+        "discountRate": "Discount rate",
+        "periodsPerYear": "Periods per year",
+        "cashFlows": "Cash flow series"
+      },
+      "actions": {
+        "addCashFlow": "Add cash flow",
+        "removeCashFlow": "Remove cash flow"
+      },
+      "submit": "Calculate NPV",
+      "reset": "Reset form",
+      "results": {
+        "title": "Net present value summary",
+    "empty": "Enter cash flow details to view projections.",
+        "netPresentValue": "Net present value",
+        "totalCashFlow": "Total cash flow",
+        "ratePerPeriod": "Rate per period",
+        "discountedCashFlows": "Discounted cash flows",
+        "period": "Period",
+        "cashFlow": "Cash flow",
+        "presentValue": "Present value"
+      },
+      "chart": {
+        "title": "Cash flows vs. present value",
+        "periodLabel": "Period",
+        "cashFlow": "Cash flow",
+        "presentValue": "Present value"
+      },
+      "info": {
+        "title": "How we calculate net present value",
+        "subtitle": "We discount each cash flow back to period zero using the selected rate.",
+        "formula": "NPV = -I + \u03a3_{t=1}^{n} CF_t / (1 + r)^t",
+        "items": {
+          "initial": {
+            "title": "I \u2014 Initial investment",
+            "description": "Cash outflow at period zero, subtracted from the discounted inflows."
+          },
+          "cashFlow": {
+            "title": "CF_t \u2014 Cash flow",
+            "description": "Positive or negative cash flow occurring at the end of period t."
+          },
+          "rate": {
+            "title": "r \u2014 Rate per period",
+            "description": "Annual discount rate divided by the number of periods per year."
+          },
+          "period": {
+            "title": "t \u2014 Period index",
+            "description": "Starts at 1 for the first future cash flow; initial investment is period 0."
+          }
+        }
+      }
+    }
+  },
+  "deposits": {
+    "pageTitle": "Plan deposits",
+    "pageSubtitle": "Plan savings, fixed, and tiered deposits with BOT reference rates, withholding tax, and custom rollovers.",
+    "tabs": {
+      "savings": "Savings Account",
+      "fixed": "Fixed Deposit",
+      "tiered": "Tiered Deposit"
+    },
+    "rateSource": {
+      "bot": "Use latest BOT rate",
+      "custom": "Custom rate"
+    },
+    "rateType": {
+      "min": "Min",
+      "average": "Average",
+      "max": "Max"
+    },
+    "rateUnavailable": "Rate unavailable",
+    "notices": {
+      "botUnavailable": "BOT rate service is currently unavailable. Enter a custom rate to continue.",
+      "rateDate": "Rates as of {{date}}",
+      "timestamp": "BOT rate timestamp: {{timestamp}}",
+      "sourceHeader": "Rate data source"
+    },
+    "fields": {
+      "principal": "Initial principal",
+      "rateSource": "Rate source",
+      "customRate": "Annual rate (% per year)",
+      "bank": "Bank",
+      "rateType": "Rate option",
+      "startDate": "Start date",
+      "endDate": "End date",
+      "withholdingTax": "Apply 15% withholding tax",
+      "term": "Fixed term",
+      "termMonths": "Term length (months)",
+      "termCount": "Number of rollovers",
+      "compoundOnRollover": "Compound at rollover"
+    },
+    "actions": {
+      "calculate": "Calculate",
+      "reset": "Reset",
+      "exportCsv": "Download CSV"
+    },
+    "results": {
+      "title": "Results",
+      "empty": "Enter deposit details to view projections.",
+      "totalContributions": "Total contributions",
+      "grossInterest": "Gross interest",
+      "netInterest": "Net interest",
+      "taxWithheld": "Tax withheld",
+      "endingBalance": "Ending balance",
+      "appliedRate": "Applied annual rate"
+    },
+    "chart": {
+      "balance": "Balance",
+      "contributions": "Contributions"
+    },
+    "schedule": {
+      "title": "Accrual schedule",
+      "periodInterest": "Interest credited: {{value}}",
+      "contributionAdded": "Contribution added: {{value}}",
+      "tax": "Tax withheld: {{value}}",
+      "balance": "Balance: {{value}}"
+    },
+    "csv": {
+      "date": "Date",
+      "contributions": "Total contributions",
+      "interest": "Net interest",
+      "tax": "Tax",
+      "balance": "Balance",
+      "grossInterest": "Gross interest",
+      "netInterest": "Net interest",
+      "balanceAfterPayout": "Balance after payout",
+      "year": "Year",
+      "mode": "Mode",
+      "term": "Term",
+      "startDate": "Start date",
+      "endDate": "End date",
+      "principal": "Principal"
+    },
+    "errors": {
+      "bankNotFound": "We could not find that bank in the BOT dataset.",
+      "rateUnavailable": "Selected rate is unavailable for this bank.",
+      "noTermData": "No BOT rates available for this term."
+    },
+    "events": {
+      "title": "Event schedule",
+      "add": "Add event",
+      "date": "Date",
+      "type": "Type",
+      "amount": "Amount",
+      "actions": "Actions",
+      "remove": "Remove",
+      "empty": "No additional deposits or withdrawals.",
+      "hint": "Keep events in chronological order. Deposits are applied before withdrawals on the same day.",
+      "deposit": "Deposit",
+      "withdraw": "Withdraw"
+    },
+    "validation": {
+      "eventOutOfRange": "Events must fall between the start and end dates.",
+      "eventsChronological": "Events must be in chronological order.",
+      "depositBeforeWithdraw": "Deposits must appear before withdrawals on the same day."
+    },
+    "savings": {
+      "title": "Savings deposit calculator",
+      "subtitle": "Calculate Actual/365 accrual with biannual payouts and latest BOT reference rates.",
+      "mode": {
+        "compound": "Year {{year}}: Compound at payout",
+        "simple": "Year {{year}}: Simple due to 20,000 THB rule"
+      },
+      "payoutHistory": "Payout history",
+      "noPayouts": "No payout dates fall inside the selected range.",
+      "stepsTitle": "Payout period summaries",
+      "step": {
+        "from": "From",
+        "to": "To",
+        "days": "Days",
+        "principal": "Principal snapshot"
+      },
+      "notes": {
+        "title": "Notes",
+        "first": "Days in the first payout period are counted from 1 January through 29 June inclusive — 180 days in a 365-day year.",
+        "second": "The second payout period counts days from 30 June through 30 December inclusive — 184 days.",
+        "third": "If the total interest received from all savings accounts from the same bank exceeds 20,000 baht in that tax year, the bank is required to withhold 15% income tax at source.",
+        "fourth": "The calculator automatically applies 15% withholding tax when cumulative interest at a payout exceeds 20,000 THB. Once the threshold is crossed, tax is withheld so that the total withheld equals 15% of the entire YTD gross interest. Subsequent payouts in the same year are taxed at 15% on their full gross amounts."
+      },
+      "agreement": "All calculations use the Asia/Bangkok time zone.",
+      "status": {
+        "title": "Tax year status",
+        "cumulativeYtd": "Cumulative interest (YTD)",
+        "remainingToThreshold": "Remaining to 20,000 THB threshold",
+        "exceededBy": "Exceeded threshold by",
+        "taxStatus": "Tax status",
+        "interestMethod": "Interest method",
+        "taxStatusNone": "No withholding yet",
+        "taxStatusCrossed": "Threshold crossed—withholding active",
+        "taxStatusAbove": "Above threshold—withholding active",
+        "methodCompound": "Compounding at payout",
+        "methodSimple": "Simple (after threshold)"
+      },
+      "thresholdBadge": "Threshold crossed here",
+      "advancedDetails": {
+        "toggle": "Show tax details",
+        "taxableAmount": "Taxable this payout",
+        "taxWithheld": "Tax withheld this payout",
+        "runningTax": "Running YTD tax"
+      },
+      "yearSummary": {
+        "title": "Annual tax summary",
+        "year": "Year",
+        "totalGross": "Total gross interest",
+        "totalTax": "Total tax withheld",
+        "totalNet": "Total net interest",
+        "closingBalance": "Closing balance"
+      },
+      "info": {
+        "title": "How we calculate savings deposit interest",
+        "subtitle": "We use the Actual/365 day-count method with biannual interest payouts.",
+        "formula": "Interest = Principal \\times Annual\\ Rate \\times \\frac{Days}{365}",
+        "items": {
+          "method": {
+            "title": "Actual/365 method",
+            "description": "Interest accrues daily based on actual calendar days divided by 365."
+          },
+          "payouts": {
+            "title": "Biannual payouts",
+            "description": "Interest is paid on June 30 and December 30 each year."
+          },
+          "threshold": {
+            "title": "20,000 THB threshold",
+            "description": "If total interest from the same bank exceeds 20,000 THB in a year, 15% withholding tax applies."
+          },
+          "compounding": {
+            "title": "Compounding rules",
+            "description": "Interest compounds at payout unless the 20,000 THB threshold is crossed, then switches to simple interest."
+          }
+        }
+      }
+    },
+    "fixed": {
+      "title": "Fixed deposit calculator",
+      "subtitle": "Calculate fixed-term simple-interest deposits with optional rollovers and tax summaries.",
+      "term": "Term",
+      "termLabel": "{{term}} term",
+      "termRange": "Term {{termIndex}} ({{start}} – {{end}})",
+      "maturityInfo": "Maturity date: {{maturityDate}}",
+      "disclaimer": "Early withdrawal penalties vary by bank; bank-specific terms may apply.",
+      "info": {
+        "title": "How we calculate fixed deposit interest",
+        "subtitle": "We use simple interest for each fixed term with optional compounding on rollover.",
+        "formula": "Interest = Principal \\times Annual\\ Rate \\times \\frac{Term\\ in\\ months}{12}",
+        "items": {
+          "simple": {
+            "title": "Simple interest",
+            "description": "Interest is calculated once at maturity based on the fixed term and rate."
+          },
+          "rollover": {
+            "title": "Rollover options",
+            "description": "You can choose to compound interest when rolling over to the next term."
+          },
+          "tax": {
+            "title": "Withholding tax",
+            "description": "15% withholding tax is applied to interest earned if enabled."
+          },
+          "term": {
+            "title": "Fixed term",
+            "description": "Deposits are locked for specific periods (e.g., 3, 6, 12, 24 months) with predetermined rates."
+          }
+        }
+      }
+    },
+    "tiered": {
+      "title": "Tiered deposit calculator",
+      "subtitle": "Calculate tiered balances with multiple rate steps and detailed breakdowns.",
+      "tiers": "Interest tiers",
+      "addTier": "Add tier",
+      "removeTier": "Remove tier",
+      "minBalance": "Min balance",
+      "maxBalance": "Max balance",
+      "rate": "Interest rate",
+      "actions": "Actions",
+      "empty": "No interest tiers defined.",
+      "hint": "Define balance ranges and their corresponding interest rates. Tiers should not overlap.",
+      "breakdown": "Tier breakdown",
+      "tierRange": "Balance range",
+      "balanceInTier": "Amount in tier",
+      "tierRate": "Rate",
+      "validation": {
+        "atLeastOneTier": "At least one tier must be defined",
+        "minLessThanMax": "Minimum balance must be less than maximum balance",
+        "overlappingRanges": "Tier ranges cannot overlap"
+      },
+      "info": {
+        "title": "How we calculate tiered deposit interest",
+        "subtitle": "We apply different interest rates to balance ranges, calculating each tier separately.",
+        "formula": "Total\\ Interest = \\sum (Amount\\ in\\ tier \\times Rate\\ for\\ tier \\times Time)",
+        "items": {
+          "tiers": {
+            "title": "Interest tiers",
+            "description": "Your balance is divided into ranges, each with its own interest rate."
+          },
+          "calculation": {
+            "title": "Per-tier calculation",
+            "description": "Each portion of your balance earns interest at its corresponding tier rate."
+          },
+          "example": {
+            "title": "Example",
+            "description": "If you have 150,000 THB with tier 1 (0-50k at 0.5%) and tier 2 (50k-200k at 1.5%), you earn 0.5% on the first 50k and 1.5% on the remaining 100k."
+          },
+          "time": {
+            "title": "Time period",
+            "description": "Interest accrues over the deposit period using the Actual/365 day-count method."
+          }
+        }
+      }
+    }
+  },
+  "common": {
+    "language": "Language",
+    "theme": "Theme",
+    "cancel": "Cancel",
+    "export": "Export",
+    "exportCsv": "Export as CSV",
+    "exportXlsx": "Export as Excel"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "action": "Back to home"
+  }
+}
