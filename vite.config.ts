@@ -11,7 +11,7 @@ export default defineConfig(({ command }) => ({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.png'],
+      includeAssets: ['favicon.png', 'favicon.webp'],
       manifest: {
         name: 'Basic Financial Calculator',
         short_name: 'FinanceCalc',
@@ -24,6 +24,11 @@ export default defineConfig(({ command }) => ({
             src: 'favicon.png',
             sizes: '256x256',
             type: 'image/png',
+          },
+          {
+            src: 'favicon.webp',
+            sizes: '256x256',
+            type: 'image/webp',
           },
         ],
       },
