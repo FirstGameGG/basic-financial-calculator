@@ -11,6 +11,7 @@ export default defineConfig(({ command }) => ({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
+      injectRegister: null,
       includeAssets: ['favicon.png', 'favicon.webp'],
       manifest: {
         name: 'Basic Financial Calculator',
@@ -29,6 +30,33 @@ export default defineConfig(({ command }) => ({
             src: 'favicon.webp',
             sizes: '256x256',
             type: 'image/webp',
+          },
+        ],
+      },
+      workbox: {
+        cleanupOutdatedCaches: true,
+        runtimeCaching: [
+          {
+            urlPattern: ({ url }) => url.pathname.startsWith(`${repoBase}assets/`),
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'app-static-assets',
+              expiration: {
+                maxEntries: 60,
+                maxAgeSeconds: 60 * 60 * 24 * 30,
+              },
+            },
+          },
+          {
+            urlPattern: ({ request }) => request.destination === 'image',
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'app-images',
+              expiration: {
+                maxEntries: 80,
+                maxAgeSeconds: 60 * 60 * 24 * 14,
+              },
+            },
           },
         ],
       },
