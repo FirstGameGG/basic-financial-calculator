@@ -23,7 +23,7 @@ import { LanguageMenu } from './LanguageMenu';
 import { ThemeToggle } from './ThemeToggle';
 import { Footer } from './Footer';
 import { FontSizeControl } from './FontSizeControl';
-import { BrandWordmark } from './BrandLogo';
+import LogoText from '../../assets/images/LogoText.webp';
 
 const NAVIGATION = [
   { path: '/', translationKey: 'nav.home' },
@@ -97,14 +97,16 @@ export const AppLayout = ({ children }: { children: ReactNode }) => {
               backdropFilter: 'blur(14px)',
             })}
           >
-            <BrandWordmark
-              height={32}
-              label={t('app.title')}
-              sx={{
-                display: 'block',
+            <Box
+              component="img"
+              src={LogoText}
+              alt={t('app.title')}
+              sx={(theme) => ({
                 height: { xs: 32, md: 40 },
-                minWidth: { xs: 96, md: 120 },
-              }}
+                width: 'auto',
+                display: 'block',
+                filter: theme.palette.mode === 'dark' ? 'brightness(1.1)' : 'none',
+              })}
             />
             <Typography
               component="span"
@@ -246,10 +248,16 @@ export const AppLayout = ({ children }: { children: ReactNode }) => {
               backdropFilter: 'blur(14px)',
             })}
           >
-            <BrandWordmark
-              height={28}
-              label={t('app.title')}
-              sx={{ height: 28, minWidth: 92 }}
+            <Box
+              component="img"
+              src={LogoText}
+              alt={t('app.title')}
+              sx={(theme) => ({
+                height: 32,
+                width: 'auto',
+                display: 'block',
+                filter: theme.palette.mode === 'dark' ? 'brightness(1.1)' : 'none',
+              })}
             />
           </Box>
         </Stack>

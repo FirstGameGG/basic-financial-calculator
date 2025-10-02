@@ -4,7 +4,8 @@ import Grid from '@mui/material/GridLegacy';
 import { Link as RouterLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import { BrandSymbol, BrandWordmark } from './BrandLogo';
+import LogoMark from '../../assets/images/Logo.webp';
+import LogoText from '../../assets/images/LogoText.webp';
 
 const FOOTER_LINK_GROUPS = [
   {
@@ -47,11 +48,30 @@ export const Footer = () => {
         <Grid container spacing={{ xs: 4, md: 6 }}>
           <Grid item xs={12} md={4}>
             <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 2 }}>
-              <BrandSymbol size={48} label={t('app.title')} />
-              <BrandWordmark
-                height={28}
-                label={undefined}
-                sx={{ display: { xs: 'none', sm: 'inline-flex' }, minWidth: 112, px: 1 }}
+              <Box
+                component="img"
+                src={LogoMark}
+                alt={t('app.title')}
+                sx={(theme) => ({
+                  width: 48,
+                  height: 48,
+                  borderRadius: '50%',
+                  p: 1,
+                  backgroundColor:
+                    theme.palette.mode === 'light'
+                      ? 'rgba(255, 255, 255, 0.7)'
+                      : 'rgba(255, 255, 255, 0.08)',
+                  boxShadow:
+                    theme.palette.mode === 'light'
+                      ? '0 10px 24px rgba(105, 57, 29, 0.18)'
+                      : '0 10px 24px rgba(0, 0, 0, 0.45)',
+                })}
+              />
+              <Box
+                component="img"
+                src={LogoText}
+                alt={t('app.title')}
+                sx={{ height: 36, width: 'auto', display: { xs: 'none', sm: 'block' } }}
               />
             </Stack>
             <Typography variant="body1" sx={{ maxWidth: 340, lineHeight: 1.6 }}>

@@ -13,26 +13,3 @@ createRoot(document.getElementById('root')!).render(
     </AppProviders>
   </StrictMode>,
 );
-
-const deferServiceWorkerRegistration = () => {
-  const activate = async () => {
-    const { registerSW } = await import('virtual:pwa-register');
-    registerSW({ immediate: false });
-  };
-
-  const requestIdle = window.requestIdleCallback?.bind(window);
-
-  if (requestIdle) {
-    requestIdle(activate);
-  } else {
-    setTimeout(activate, 800);
-  }
-};
-
-if ('serviceWorker' in navigator && import.meta.env.PROD) {
-  if (document.readyState === 'complete') {
-    deferServiceWorkerRegistration();
-  } else {
-    window.addEventListener('load', deferServiceWorkerRegistration, { once: true });
-  }
-}

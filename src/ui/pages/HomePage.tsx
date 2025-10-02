@@ -11,7 +11,7 @@ import LeaderboardIcon from '@mui/icons-material/Leaderboard';
 import ShieldOutlinedIcon from '@mui/icons-material/ShieldOutlined';
 import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { BrandSymbol } from '../components/BrandLogo';
+import LogoMark from '../../assets/images/Logo.webp';
 
 export const HomePage = () => {
   const { t } = useTranslation();
@@ -179,12 +179,16 @@ export const HomePage = () => {
                   zIndex: 0,
                 }}
               />
-              <BrandSymbol
-                size={220}
-                label={t('home.hero.logoAlt', 'Basic Financial Calculator logo mark')}
+              <Box
+                component="img"
+                src={LogoMark}
+                alt={t('home.hero.logoAlt', 'Basic Financial Calculator logo mark')}
                 sx={{
                   position: 'relative',
+                  width: '100%',
                   maxWidth: { xs: 220, md: 280 },
+                  borderRadius: 5,
+                  boxShadow: (theme) => theme.shadows[10],
                   zIndex: 1,
                 }}
               />
