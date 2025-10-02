@@ -1,5 +1,6 @@
-import { Box, Container, Divider, Grid, Link, Stack, Typography } from '@mui/material';
+import { Box, Container, Divider, Link, Stack, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
+import Grid from '@mui/material/GridLegacy';
 import { Link as RouterLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 

@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const numericField = (message: string) => z.number({ error: message }).finite(message);
+const numericField = (message: string) => z.number(message).finite(message);
 
 export const futureValueFormSchema = z.object({
   presentValue: numericField('Enter the present value').min(0, 'Present value cannot be negative'),
@@ -25,6 +25,10 @@ export const futureValueDefaultValues: FutureValueFormValues = {
   contributionTiming: 'end',
 };
 
+const cashFlowSchema = z.object({
+  amount: numericField('Enter a cash flow'),
+});
+
 export const netPresentValueFormSchema = z.object({
   initialInvestment: numericField('Enter the initial investment').min(0, 'Initial investment cannot be negative'),
   discountRatePercent: numericField('Enter the discount rate'),
@@ -32,9 +36,7 @@ export const netPresentValueFormSchema = z.object({
     .int('Periods per year must be an integer')
     .positive('Periods per year must be greater than zero')
     .max(52, 'Periods per year must be 52 or fewer'),
-  cashFlows: z
-    .array(numericField('Enter a cash flow'))
-    .min(1, 'Add at least one cash flow'),
+  cashFlows: z.array(cashFlowSchema).min(1, 'Add at least one cash flow'),
 });
 
 export type NetPresentValueFormValues = z.infer<typeof netPresentValueFormSchema>;
@@ -43,5 +45,5 @@ export const netPresentValueDefaultValues: NetPresentValueFormValues = {
   initialInvestment: 10000,
   discountRatePercent: 8,
   periodsPerYear: 1,
-  cashFlows: [3500, 4000, 4500, 4500],
+  cashFlows: [{ amount: 3500 }, { amount: 4000 }, { amount: 4500 }, { amount: 4500 }],
 };

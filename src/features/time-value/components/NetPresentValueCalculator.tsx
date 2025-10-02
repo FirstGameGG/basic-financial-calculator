@@ -61,14 +61,19 @@ export const NetPresentValueCalculator = () => {
   const discountRatePercent = watch('discountRatePercent');
   const periodsPerYear = watch('periodsPerYear');
 
-  const { fields, append, remove } = useFieldArray({
+  const { fields, append, remove } = useFieldArray<NetPresentValueFormValues, 'cashFlows'>({
     control,
-    name: 'cashFlows' as const,
+    name: 'cashFlows',
   });
   const [calculation, setCalculation] = useState<NetPresentValueResult | null>(null);
 
   const onSubmit = (values: NetPresentValueFormValues) => {
-    const result = calculateNetPresentValue(values);
+    const result = calculateNetPresentValue({
+      initialInvestment: values.initialInvestment,
+      discountRatePercent: values.discountRatePercent,
+      periodsPerYear: values.periodsPerYear,
+      cashFlows: values.cashFlows.map((entry) => entry.amount),
+    });
     setCalculation(result);
   };
 
@@ -78,7 +83,7 @@ export const NetPresentValueCalculator = () => {
   };
 
   const handleAddCashFlow = () => {
-    append(0);
+    append({ amount: 0 });
   };
 
   const handleRemoveCashFlow = (index: number) => {
@@ -112,9 +117,23 @@ export const NetPresentValueCalculator = () => {
     exportTable(filename, rows, format, t('timeValue.npv.results.discountedCashFlows'));
   };
 
-  const cashFlowArrayErrorMessage = Array.isArray(errors.cashFlows)
-    ? undefined
-    : errors.cashFlows?.message;
+  const cashFlowArrayErrorMessage = (() => {
+    const error = errors.cashFlows;
+    if (!error || Array.isArray(error)) {
+      return undefined;
+    }
+
+    if (typeof (error as { message?: string }).message === 'string') {
+      return (error as { message?: string }).message;
+    }
+
+    const root = (error as { root?: { message?: string } }).root;
+    if (typeof root?.message === 'string') {
+      return root.message;
+    }
+
+    return undefined;
+  })();
 
   const chartData = useMemo(() => {
     if (!calculation) return null;
@@ -209,16 +228,17 @@ export const NetPresentValueCalculator = () => {
                 ) : null}
                 <Stack spacing={2}>
                   {fields.map((field, index) => {
-                    const cashFlowValue = watch(`cashFlows.${index}` as const);
+                    const cashFlowFieldName = `cashFlows.${index}.amount` as const;
+                    const cashFlowValue = watch(cashFlowFieldName);
                     return (
                       <Stack key={field.id} direction="row" spacing={2} alignItems="center">
                         <FormattedNumberField
                           fullWidth
                           placeholder="0"
                           value={cashFlowValue}
-                          onValueChange={(value) => setValue(`cashFlows.${index}` as const, value ?? 0)}
-                          error={Boolean(errors.cashFlows?.[index])}
-                          helperText={errors.cashFlows?.[index]?.message}
+                          onValueChange={(value) => setValue(cashFlowFieldName, value ?? 0)}
+                          error={Boolean(errors.cashFlows?.[index]?.amount)}
+                          helperText={errors.cashFlows?.[index]?.amount?.message}
                           InputProps={{
                             startAdornment: <InputAdornment position="start">{currency}</InputAdornment>,
                           }}

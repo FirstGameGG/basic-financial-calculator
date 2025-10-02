@@ -3,11 +3,12 @@ import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { AppProviders } from '../../../../app/providers';
+import type { BotDepositRateDataset, BotDepositRateRecord } from '../../../../services/bot/depositRates';
 import { formatCurrency } from '../../../../utils/format';
 import { SavingsDepositCalculator } from '../SavingsDepositCalculator';
 
 vi.mock('../../../../services/bot/depositRates', () => {
-  const dataset = {
+  const dataset: BotDepositRateDataset = {
     timestamp: '2025-01-02 09:00:00',
     period: '2025-01-02',
     records: [
@@ -29,7 +30,7 @@ vi.mock('../../../../services/bot/depositRates', () => {
   return {
     getLatestBotDepositRates: vi.fn().mockResolvedValue(dataset),
     getLatestBotDate: vi.fn().mockResolvedValue({ period: dataset.period, timestamp: dataset.timestamp }),
-    groupRatesByBankType: vi.fn((records) =>
+    groupRatesByBankType: vi.fn((records: BotDepositRateRecord[]) =>
       records.map((record) => ({ bankType: record.bankType, banks: [record] })),
     ),
   };

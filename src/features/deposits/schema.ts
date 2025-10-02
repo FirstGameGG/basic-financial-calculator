@@ -4,24 +4,20 @@ export const rateSourceSchema = z.enum(['bot', 'custom']);
 const datePattern = /\d{4}-\d{2}-\d{2}/;
 
 const savingsEventSchema = z.object({
-  date: z.string({ required_error: 'validation.required' }).regex(datePattern, {
-    message: 'validation.dateFormat',
+  date: z.string('validation.required').regex(datePattern, {
+      message: 'validation.dateFormat',
   }),
   type: z.enum(['deposit', 'withdraw']),
-  amount: z
-    .number({ required_error: 'validation.required' })
-    .positive({ message: 'validation.positive' }),
+  amount: z.number('validation.required').positive({ message: 'validation.positive' }),
 });
 
 export const savingsFormSchema = z
   .object({
-    principal: z
-      .number({ required_error: 'validation.required' })
-      .nonnegative({ message: 'validation.nonNegative' }),
-    startDate: z.string({ required_error: 'validation.required' }).regex(datePattern, {
+    principal: z.number('validation.required').nonnegative({ message: 'validation.nonNegative' }),
+    startDate: z.string('validation.required').regex(datePattern, {
       message: 'validation.dateFormat',
     }),
-    endDate: z.string({ required_error: 'validation.required' }).regex(datePattern, {
+    endDate: z.string('validation.required').regex(datePattern, {
       message: 'validation.dateFormat',
     }),
     rateSource: rateSourceSchema,
@@ -109,8 +105,8 @@ export type SavingsFormValues = z.infer<typeof savingsFormSchema>;
 
 export const fixedDepositFormSchema = z
   .object({
-    principal: z.number({ required_error: 'validation.required' }).nonnegative({ message: 'validation.nonNegative' }),
-    startDate: z.string({ required_error: 'validation.required' }).regex(/\d{4}-\d{2}-\d{2}/, {
+    principal: z.number('validation.required').nonnegative({ message: 'validation.nonNegative' }),
+    startDate: z.string('validation.required').regex(/\d{4}-\d{2}-\d{2}/, {
       message: 'validation.dateFormat',
     }),
     rateSource: rateSourceSchema,
@@ -170,26 +166,18 @@ export const fixedDepositDefaultValues: FixedDepositFormValues = {
 };
 
 const tierSchema = z.object({
-  minBalance: z
-    .number({ required_error: 'validation.required' })
-    .nonnegative({ message: 'validation.nonNegative' }),
-  maxBalance: z
-    .number({ required_error: 'validation.required' })
-    .positive({ message: 'validation.positive' }),
-  rate: z
-    .number({ required_error: 'validation.required' })
-    .nonnegative({ message: 'validation.nonNegative' }),
+  minBalance: z.number('validation.required').nonnegative({ message: 'validation.nonNegative' }),
+  maxBalance: z.number('validation.required').positive({ message: 'validation.positive' }),
+  rate: z.number('validation.required').nonnegative({ message: 'validation.nonNegative' }),
 });
 
 export const tieredDepositFormSchema = z
   .object({
-    principal: z
-      .number({ required_error: 'validation.required' })
-      .nonnegative({ message: 'validation.nonNegative' }),
-    startDate: z.string({ required_error: 'validation.required' }).regex(datePattern, {
+    principal: z.number('validation.required').nonnegative({ message: 'validation.nonNegative' }),
+    startDate: z.string('validation.required').regex(datePattern, {
       message: 'validation.dateFormat',
     }),
-    endDate: z.string({ required_error: 'validation.required' }).regex(datePattern, {
+    endDate: z.string('validation.required').regex(datePattern, {
       message: 'validation.dateFormat',
     }),
     tiers: z.array(tierSchema).min(1, { message: 'deposits.tiered.validation.atLeastOneTier' }),

@@ -67,12 +67,6 @@ const endOfMonth = (date: Date) => {
     .padStart(2, '0')}`);
 };
 
-const clampContributionDay = (targetDay: number, date: Date) => {
-  const { year, month } = getDateParts(date);
-  const lastDay = daysInMonth(year, month);
-  return Math.min(Math.max(targetDay, 1), lastDay);
-};
-
 const countDaysInclusive = (start: Date, end: Date) =>
   Math.round((end.getTime() - start.getTime()) / (24 * 60 * 60 * 1000)) + 1;
 
