@@ -1,5 +1,13 @@
 # Basic Financial Calculator
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![React](https://img.shields.io/badge/React-19.1.1-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-7.1.7-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Material-UI](https://img.shields.io/badge/Material--UI-7.3.2-007FFF?logo=mui&logoColor=white)](https://mui.com/)
+[![pnpm](https://img.shields.io/badge/pnpm-10.17.1-F69220?logo=pnpm&logoColor=white)](https://pnpm.io/)
+[![PWA](https://img.shields.io/badge/PWA-Enabled-5A0FC8?logo=pwa&logoColor=white)](https://web.dev/progressive-web-apps/)
+
 A multilingual (English/Thai) suite of web-based calculators for Thai retail banking scenarios. Built with React, Vite, Material UI, and decimal-precise financial logic, the app covers loan amortisation, savings Actual/365 accruals, fixed and tiered deposits, and time-value simulations.
 
 ## ✨ Highlights
@@ -100,6 +108,9 @@ pnpm test
 - Run `pnpm lint`, `pnpm typecheck`, and `pnpm test` before pushing changes.
 - Update dependencies with `pnpm update --interactive` and rerun quality checks.
 - See `docs/DesignDocument.md` for architectural guidance prior to introducing new calculators or modifying tax logic.
+
+## 📄 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
